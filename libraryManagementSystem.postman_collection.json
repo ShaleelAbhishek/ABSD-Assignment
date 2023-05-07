@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "aea7a56e-faf4-445d-880e-8ff811d9db8a",
+		"name": "libraryManagementSystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "create-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"firstName\": \"Gayan\",\r\n\t\"lastName\": \"Chathura\",\r\n\t\"universityId\": 14555012,\r\n\t\"username\": \"abhishek2@gmail.com\",\r\n\t\"telephones\": [\r\n\t\t\t{\r\n\t\t\t\t\"number\": \"121222\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\r\n\t\t\t\t\"number\": \"31233\"\r\n\t\t\t}]\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8181/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-user-by-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8181/user/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-user-book-list-by-user-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8181/user/currentbooks/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"user",
+								"currentbooks",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"firstName\": \"Abishek\",\r\n\t\"lastName\": \"Chathura\",\r\n\t\"universityId\": 14541012,\r\n\t\"username\": \"abhishek@gmail.com\",\r\n\t\"telephones\": [\r\n\t\t\t{\r\n\t\t\t\t\"number\": \"12122\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\r\n\t\t\t\t\"number\": \"3123\"\r\n\t\t\t}]\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "transaction",
+			"item": [
+				{
+					"name": "get-all-transaction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/transaction",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"transaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\": 3,\r\n    \"universityId\": 14555012,\r\n    \"checkin_date\": \"2023-05-06\",\r\n    \"checkout_date\": \"2023-05-06\",\r\n    \"fine\": 0,\r\n    \"isReturned\": false,\r\n    \"returnedDate\": \"2023-05-25\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8081/transaction",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"transaction"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "book",
+			"item": [
+				{
+					"name": "add-books",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n\r\n   \"isbn\": \"712-680\",\r\n   \"title\": \"Sherlock Holmes 3\",\r\n   \"author\": \"Arther Conendoil\",\r\n   \"publisher\": \"unknown\",\r\n   \"year_of_publication\": \"1995\",\r\n   \"location\": \"unknown\",\r\n   \"price\": \"600\",\r\n   \"num_of_copies\": 10000 \r\n\r\n }"
+						},
+						"url": {
+							"raw": "http://localhost:8080/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-book-by-book-id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/book/delete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-book-by-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/book/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
